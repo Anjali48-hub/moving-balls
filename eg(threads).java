@@ -81,5 +81,50 @@ public class Race implements Runnable
          }
        runObstacleB();
       }
+      public void buildGUI()
+      {
+    	  fr=new JFrame("moving obects");
+    	  fr.setVisible(true);
+    	  fr.setSize(400,200);
+    	  fr.setLayout(null);
+    	  
+    	  l=new JLable("");
+    	  l.setBounds(10,10,400,20);
+    	  fr.add(l);
+    	  
+    	  l1=new JPanel();
+    	  l1.setSize(20,20);
+    	  l1.setBackground(color,red);
+    	  l1.setBounds(10,40,20,20);
+    	  fr.add(l1);
+    	  
+    	  l2=new JPanel();
+    	  l2.setSize(20,20);
+    	  l2.setBackground(color,blue);
+    	  l2.setBounds(10,80,20,20);
+    	  fr.add(l2);
+    	  
+    	  l3=new JPanel();
+    	  l3.setSize(20,20);
+    	  l3.setBackground(color,black);
+    	  l3.setBounds(10,120,20,20);
+    	  fr.add(l3);
+      }
+     public static void main(Sring arg[])
+     {
+    	 Race obj=new Race();
+    	 Thread Obstacle1=new Thread(obj);
+    	 Thread Obstacle2=new Thread(obj);
+    	 Thread Obstacle3=new Thread(obj);
+    	 
+      Obstacle1.setName("ObstacleA");
+      Obstacle2.setName("ObstacleB");
+      Obstacle3.setName("ObstacleC");
+      Obstacle1.start();
+      Obstacle2.start();
+      Obstacle3.start();
+     }
+    }
+      
       
      
